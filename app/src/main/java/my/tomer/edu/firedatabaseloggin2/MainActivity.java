@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
@@ -14,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,13 +51,33 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }else {
                     Toast.makeText(MainActivity.this, "Hello, " + currentUser.getEmail(), Toast.LENGTH_SHORT).show();
-                    //initRecycler();
+                    initRecycler();
                 }
             }
         });
 
 
     }
+
+
+    private void initRecycler() {
+        //find View By Id:
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.todosRecycler);
+
+        //Get a reference to our table:
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = currentUser.getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Todos").child(uid);
+
+        //init a new instance of the adapter
+        TodosRecyclerAdapter adapter = new TodosRecyclerAdapter(ref);
+
+        //set the adapter on the recyclerView
+        recyclerView.setAdapter(adapter);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
