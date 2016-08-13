@@ -1,79 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coorLay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layout"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="my.tomer.edu.firedatabaseloggin2.LoginActivity">
+    android:fitsSystemWindows="true"
+    tools:context="azubakov.edu.caloriescalc.activity.LoginActivity">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:clickable="false"
-        android:src="@drawable/firebase"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_below="@+id/imageView"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:id="@+id/til"
-        android:layout_height="wrap_content">
+        android:id="@+id/AppBarLay"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/etEmail"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:layout_below="@+id/imageView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="         Calories Calc"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+    </android.support.design.widget.AppBarLayout>
 
+  <!--  <include layout="@layout/content_login" />-->
+   <include layout="@layout/content_login_animation"/>
 
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/til2"
-        android:layout_below="@+id/til"
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:layout_below="@+id/imageView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-    </android.support.design.widget.TextInputLayout>
-
-
-    <Button
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/til2"
-        android:id="@+id/btnLogin"
-        android:onClick="login"
-        android:text="Login"
-        />
+        android:layout_gravity="top|start"
+        android:layout_margin="@dimen/fab_margin"
 
-    <Button
+        android:src="@drawable/ic_block_24dp"
+        android:onClick="ExitFinish"
+        />
+    <!--android:src="@android:drawable/ic_dialog_email"-->
+  <!--  <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/til2"
-        android:layout_alignParentRight="true"
-        android:id="@+id/btnRegister"
-        android:onClick="signUp"
-        android:text="Sign Up"
-        />
-</RelativeLayout>
+        android:layout_gravity="top|start"
+        android:backgroundTint="#07ece4"
+        android:src="@drawable/ic_block_24dp"
+        android:onClick="ExitFininsh"
+     />-->
+  <!--  android:layout_margin="@dimen/fab_margin"-->
+
+
+</android.support.design.widget.CoordinatorLayout>

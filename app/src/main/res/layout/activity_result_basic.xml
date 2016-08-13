@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".activity.MainActivity">
+    tools:context="azubakov.edu.caloriescalc.activity.ResultBasicActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -16,13 +16,13 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="       Calories Calc"
+            app:title="         Calories Calc"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_result_basic" />
 
     <!--<android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -30,8 +30,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/calculator"
-        />-->
+        android:src="@android:drawable/ic_dialog_email" />-->
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="#08f524"
+        android:src="@drawable/ic_reply_24dp"
+        android:onClick="back"
+        app:layout_anchor="@id/toolbar"
+        app:layout_anchorGravity="center|start"
+
+
+        />
 
 
 

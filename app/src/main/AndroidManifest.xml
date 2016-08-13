@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="my.tomer.edu.firedatabaseloggin2">
+    package="azubakov.edu.caloriescalc">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="azubakov.edu.caloriescalc.activity.UserListsActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -18,9 +18,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name="azubakov.edu.caloriescalc.activity.LoginActivity">
 
         </activity>
+        <activity
+            android:name="azubakov.edu.caloriescalc.activity.CalorieRecyclerActivity"
+            android:label="@string/title_activity_result_basic"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="azubakov.edu.caloriescalc.activity.ResultBasicActivity"
+            android:label="@string/title_activity_result_basic"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="azubakov.edu.caloriescalc.activity.CalorieNavDrawerActivity"
+            android:label="@string/title_activity_calorie_nav_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".activity.CaloriesDetailsBasicActivity"
+            android:label="@string/title_activity_result_basic"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
 
     </application>
 
